@@ -1,5 +1,4 @@
-package web.etudiant;
-
+package web;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 
@@ -12,18 +11,21 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(urlPatterns = { "/supprimerServlet" })
-public class supprimerServlet extends HttpServlet {
+@WebServlet(urlPatterns = { "/searchEngine" })
+public class RedirectSearch extends HttpServlet {
    
-
+boolean switchEngine =true;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String cin = req.getParameter("cin");
-        ArrayList<Etudiant> list = (ArrayList<Etudiant>) req.getAttribute("data");
-        list.remove(cin);
-        req.setAttribute("data", Etudiant.etudiantList);
-        RequestDispatcher rd = req.getRequestDispatcher("etudiant/affiche.jsp");
-        rd.forward(req, resp);
+        
+    	
+    	String search =req.getParameter("search");
+    	switchEngine=!switchEngine;
+       if(switchEngine) {
+    	   resp.sendRedirect("https://www.google.com/search?q="+search);
+       }else {
+    	   resp.sendRedirect("https://search.yahoo.com/search?p="+search);
+       }
        
            
        // HttpSession maSession = req.getSession();

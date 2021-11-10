@@ -10,4 +10,14 @@
     <servlet-name>supprimerServlet</servlet-name>
     <url-pattern>/supprimerServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RedirectSearch</display-name>
+    <servlet-name>RedirectSearch</servlet-name>
+    <servlet-class>web.RedirectSearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RedirectSearch</servlet-name>
+    <url-pattern>/RedirectSearch</url-pattern>
+  </servlet-mapping>
 </web-app>
