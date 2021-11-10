@@ -23,7 +23,7 @@ public class supprimerServlet extends HttpServlet {
         String cin = req.getParameter("cin");
         ArrayList<Etudiant> list = (ArrayList<Etudiant>) req.getAttribute("data");
         list.remove(cin);
-       
+        req.setAttribute("data", Etudiant.etudiantList);
         RequestDispatcher rd = req.getRequestDispatcher("etudiant/affiche.jsp");
         rd.forward(req, resp);
        
