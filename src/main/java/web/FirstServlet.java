@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.*;
 
-@WebServlet(urlPatterns = { "/*" })
+@WebServlet(name = "cs", urlPatterns = { "/" })
 public class FirstServlet extends HttpServlet {
     private static final long serialVersionUID = 1825023232864573043L;
 

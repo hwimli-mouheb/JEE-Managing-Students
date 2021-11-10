@@ -6,25 +6,22 @@
     <title>Title</title>
 </head>
 <body>
-<table>
-    <tr>
-        <th>cin</th>
-        <th>prenom<</th>
-        <th>nom</th>
-    </tr>
+
     <%
         ArrayList<Etudiant> list = (ArrayList<Etudiant>) request.getAttribute("data");
         for (Etudiant it : list) {%>
-
-    <tr>
-        <td><%=it.cin%>
-        </td>
-        <td><%=it.name%>
-        </td>
-        <td><%=it.lastName%>
-        </td>
-    </tr>
+<form action="supprimerServlet?cin=<%=it.cin%>" method="get">
+   <%=it.cin%>
+       
+       <%=it.name%>
+       
+       <%=it.lastName%>
+       
+       
+         <input type=submit id="supprimer" name="cin" value="supprimer"></input>
+         </form>
+        
     <%}%>
-</table>
+
 </body>
 </html>
